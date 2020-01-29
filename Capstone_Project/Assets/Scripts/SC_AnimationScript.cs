@@ -43,7 +43,6 @@ public class SC_AnimationScript : MonoBehaviour
 
     public void Flip(int side)
     {
-
         if (move.wallSlide)
         {
             if (side == -1 && sr.flipX)

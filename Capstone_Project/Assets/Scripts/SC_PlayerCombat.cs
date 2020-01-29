@@ -20,6 +20,7 @@ public class SC_PlayerCombat : MonoBehaviour
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -29,13 +30,6 @@ public class SC_PlayerCombat : MonoBehaviour
             animator.SetBool("Attack1", false);
             animator.SetBool("Attack2", false);
             animator.SetBool("Attack3", false);
-
-
-
-            //if( !animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Idle") )
-            //{
-            //animator.Play("Player_Idle");
-            //}
 
         }
 
@@ -111,7 +105,7 @@ public class SC_PlayerCombat : MonoBehaviour
         animator.SetTrigger("Attack");
 
         //Detect enemies in range of attack
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position,attackRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         //Damage Them
         foreach(Collider2D enemy in hitEnemies)
