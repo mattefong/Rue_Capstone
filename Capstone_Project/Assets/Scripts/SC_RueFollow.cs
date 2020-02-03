@@ -20,11 +20,12 @@ public class SC_RueFollow : MonoBehaviour
         rueAnim = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            var targetPos = new Vector2(target.position.x, transform.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
         }
 
         rueAnim.Play("Rue_Running");
