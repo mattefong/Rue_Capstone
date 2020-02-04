@@ -3668,7 +3668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104860970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2892456, y: 3.1561975, z: 84.28188}
+  m_LocalPosition: {x: -4.1477766, y: 3.1561975, z: 84.28188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1913242029}
@@ -19420,7 +19420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610061439}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2892456, y: 3.1561975, z: 84.28188}
+  m_LocalPosition: {x: -4.1477766, y: 3.1561975, z: 84.28188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 94573658}
@@ -19782,7 +19782,7 @@ GameObject:
   - component: {fileID: 1366946459}
   - component: {fileID: 1366946458}
   - component: {fileID: 1366946456}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23379,7 +23379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   stoppingDistance: 1.5
-  rueAnim: {fileID: 0}
+  rueAnim: {fileID: 1414577095}
 --- !u!212 &1414577091
 SpriteRenderer:
   m_ObjectHideFlags: 0
