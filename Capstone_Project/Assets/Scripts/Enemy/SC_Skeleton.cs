@@ -5,7 +5,10 @@ using UnityEngine;
 public class SC_Skeleton : MonoBehaviour
 {
     [SerializeField]
-    private float maxHealth, knockbackSpeedX, knockbackSpeedY, knockbackDuration, knockbackDeathSpeedX, knockbackDeathSpeedY, deathTorque;
+    private float knockbackSpeedX, knockbackSpeedY, knockbackDuration, knockbackDeathSpeedX, knockbackDeathSpeedY, deathTorque;
+
+    public float maxHealth;
+
     [SerializeField]
     private bool applyKnockback;
 
@@ -13,7 +16,10 @@ public class SC_Skeleton : MonoBehaviour
     [SerializeField]
     private GameObject hitParticle;
 
-    private float currentHealth, knockbackStart;
+    private float knockbackStart;
+
+    public float currentHealth;
+
     public float speed;
 
     private int playerFacingDirection;
@@ -64,8 +70,8 @@ public class SC_Skeleton : MonoBehaviour
             playerOnLeft = false;
         }
 
-        aliveAnim.SetBool("playerOnLeft", playerOnLeft);
-        aliveAnim.SetTrigger("damage");
+        //aliveAnim.SetBool("playerOnLeft", playerOnLeft);
+        //aliveAnim.SetTrigger("damage");
 
         if (applyKnockback && currentHealth > 0.0f)
         {

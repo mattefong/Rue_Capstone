@@ -5,7 +5,10 @@ using UnityEngine;
 public class SC_Dummy : MonoBehaviour
 {
     [SerializeField]
-    private float maxHealth, knockbackSpeedX, knockbackSpeedY, knockbackDuration, knockbackDeathSpeedX, knockbackDeathSpeedY, deathTorque;
+    private float knockbackSpeedX, knockbackSpeedY, knockbackDuration, knockbackDeathSpeedX, knockbackDeathSpeedY, deathTorque;
+    
+    public float maxHealth;
+
     [SerializeField]
     private bool applyKnockback;
 
@@ -13,7 +16,9 @@ public class SC_Dummy : MonoBehaviour
     [SerializeField]
     private GameObject hitParticle;
 
-    private float currentHealth, knockbackStart;
+    private float knockbackStart;
+
+    public float currentHealth;
 
     private int playerFacingDirection;
 

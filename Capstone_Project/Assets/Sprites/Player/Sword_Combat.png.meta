@@ -1842,7 +1842,7 @@ TextureImporter:
         serializedVersion: 2
         x: 60
         y: 297
-        width: 34
+        width: 37
         height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3013,27 +3013,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_Combat_106
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 1
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f0cca1022b353141b0ad1c807b9c796
-      internalID: 8486914643138017907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Sword_Combat_107
       rect:
         serializedVersion: 2
@@ -3055,48 +3034,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_Combat_108
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 2
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18505e0e7085c134cbe100616cbd4457
-      internalID: -7671810868472790463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_Combat_109
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 1
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bad352b01dbefe84094ed1a0c95c3daa
-      internalID: 2572961490233352390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Sword_Combat_110
       rect:
         serializedVersion: 2
@@ -3113,27 +3050,6 @@ TextureImporter:
       bones: []
       spriteID: baf7e3b11e0316849b59515c4d345f06
       internalID: -3833743076573905204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_Combat_111
-      rect:
-        serializedVersion: 2
-        x: 142
-        y: 1
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3adeea78f987794780765fa3a8b103c
-      internalID: -2174616846398294857
       vertices: []
       indices: 
       edges: []

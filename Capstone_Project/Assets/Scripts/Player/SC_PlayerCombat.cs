@@ -14,7 +14,7 @@ public class SC_PlayerCombat : MonoBehaviour
     [SerializeField]
     private LayerMask whatIsDamageable;
 
-    private bool gotInput, isAttacking, isFirstAttack;
+    private bool gotInput, isAttacking, isFirstAttack, pcAbility;
 
     private float lastInputTime = Mathf.NegativeInfinity;
 
@@ -42,6 +42,11 @@ public class SC_PlayerCombat : MonoBehaviour
                 gotInput = true;
                 lastInputTime = Time.time;
             }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            pcAbility = true;
+            anim.SetBool("ability", pcAbility);
         }
     }
 
