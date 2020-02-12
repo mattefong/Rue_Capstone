@@ -18,6 +18,8 @@ public class SC_PlayerCombat : MonoBehaviour
 
     private float lastInputTime = Mathf.NegativeInfinity;
 
+    public float[] attackDetails = new float[2];
+
     private Animator anim;
 
     private void Start()

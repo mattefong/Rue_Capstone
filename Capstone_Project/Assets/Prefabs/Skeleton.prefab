@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa49c2d2bd52d34499d167999a22513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeleton: {fileID: 3921006752980131186}
+  skeleton: {fileID: 3921006752901453978}
   player: {fileID: 0}
   skeletonGO: {fileID: 3921006752980131186}
   agroRange: 5
