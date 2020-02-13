@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa49c2d2bd52d34499d167999a22513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeleton: {fileID: 3921006752980131186}
+  skeleton: {fileID: 3921006752901453978}
   player: {fileID: 0}
   skeletonGO: {fileID: 3921006752980131186}
   agroRange: 5
@@ -180,7 +180,6 @@ GameObject:
   - component: {fileID: 3921006752980131198}
   - component: {fileID: 3921006752980131199}
   - component: {fileID: 3921006752980131196}
-  - component: {fileID: 3921006752980131197}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -241,22 +240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3921006753028440916}
---- !u!58 &3921006752980131197
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3921006752980131186}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.2126015, y: 0.986122}
-  serializedVersion: 2
-  m_Radius: 0.9753183
 --- !u!1 &3921006753028440916
 GameObject:
   m_ObjectHideFlags: 0

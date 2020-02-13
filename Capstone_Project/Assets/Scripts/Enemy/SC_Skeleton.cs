@@ -92,7 +92,6 @@ public class SC_Skeleton : MonoBehaviour
         knockbackStart = Time.time;
         rbAlive.velocity = new Vector2(knockbackSpeedX * playerFacingDirection, knockbackSpeedY);
         aliveAnim.SetTrigger("isHurt");
-
     }
 
     private void CheckKnockBack()
