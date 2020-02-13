@@ -1,70 +1,61 @@
 fileFormatVersion: 2
-guid: cf9d21e5bf86f864ba81c815e48eca4e
+guid: 93eafaf52cb6d5f489762c85eef8f283
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3225832317793331946
-    second: slime-Sheet_0
+      213: 6369384564468328029
+    second: Enemy 1.2_0
   - first:
-      213: 5952692474738800764
-    second: slime-Sheet_1
+      213: 6138185936412383962
+    second: Enemy 1.2_1
   - first:
-      213: 4909821198284645373
-    second: slime-Sheet_2
+      213: -275327403722753088
+    second: Enemy 1.2_2
   - first:
-      213: 4179155057698957012
-    second: slime-Sheet_3
+      213: 850753403565259673
+    second: Enemy 1.2_3
   - first:
-      213: -8154299252778131244
-    second: slime-Sheet_4
+      213: 3471711084143634667
+    second: Enemy 1.2_4
   - first:
-      213: 1734891440256307957
-    second: slime-Sheet_5
+      213: -3991021883962996350
+    second: Enemy 1.2_5
   - first:
-      213: 6887022319851403142
-    second: slime-Sheet_6
+      213: -5760543911693439659
+    second: Enemy 1.2_6
   - first:
-      213: 5957987307645184366
-    second: slime-Sheet_7
+      213: -3974637543865793226
+    second: Enemy 1.2_7
   - first:
-      213: 121371861024997490
-    second: slime-Sheet_8
+      213: -5594722903381117994
+    second: Enemy 1.2_8
   - first:
-      213: 3146804172381277489
-    second: slime-Sheet_9
+      213: 6200630191683923526
+    second: Enemy 1.2_9
   - first:
-      213: -2200864171832323305
-    second: slime-Sheet_10
+      213: -3627136891024772522
+    second: Enemy 1.2_10
   - first:
-      213: 9207829615066030709
-    second: slime-Sheet_11
+      213: 8363528568878816504
+    second: Enemy 1.2_11
   - first:
-      213: -7380300888587303819
-    second: slime-Sheet_12
+      213: -1198644127468891106
+    second: Enemy 1.2_12
   - first:
-      213: 4993349697702114157
-    second: slime-Sheet_13
+      213: 3094342574952375879
+    second: Enemy 1.2_13
   - first:
-      213: 3913231095913793702
-    second: slime-Sheet_14
+      213: 7492954755084660316
+    second: Enemy 1.2_14
   - first:
-      213: 4811920900910276441
-    second: slime-Sheet_15
+      213: -2871824185258403877
+    second: Enemy 1.2_15
   - first:
-      213: -7772930111310310504
-    second: slime-Sheet_16
+      213: -4890390274435696291
+    second: Enemy 1.2_16
   - first:
-      213: -4570960877372392886
-    second: slime-Sheet_17
-  - first:
-      213: 1577109790741768683
-    second: slime-Sheet_18
-  - first:
-      213: -2658792678680092322
-    second: slime-Sheet_19
-  - first:
-      213: 1516403292026958468
-    second: slime-Sheet_20
+      213: -3698650164525975811
+    second: Enemy 1.2_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -105,7 +96,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -143,17 +134,39 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slime-Sheet_0
+      name: Enemy 1.2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 50
-        width: 32
-        height: 25
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,41 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e74b723477b9f54ca36aa9deb311fa4
-      internalID: 3225832317793331946
+      spriteID: 696560000b76dd642bc2d49bac79e7cd
+      internalID: 6369384564468328029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 50
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e826c86d5c89933468dfc31a370f9da6
-      internalID: 5952692474738800764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime-Sheet_2
+      name: Enemy 1.2_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 50
-        width: 32
-        height: 25
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,41 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd316296e57db14478af8e758a5ef3cb
-      internalID: 4909821198284645373
+      spriteID: 76d26727c619ce64cbc81904b5f05672
+      internalID: 6138185936412383962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 50
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d10d58cf36224c4baf3a4c76fe37ac9
-      internalID: 4179155057698957012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime-Sheet_4
+      name: Enemy 1.2_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 50
-        width: 32
-        height: 25
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,41 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 206eed85f2fe9184faa975c0f4ff8168
-      internalID: -8154299252778131244
+      spriteID: 0b1a7577f922e4a449487fe7c8ebc5b5
+      internalID: -275327403722753088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 50
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a094c9fb872e79489ca367fb1af7550
-      internalID: 1734891440256307957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime-Sheet_6
+      name: Enemy 1.2_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 50
-        width: 32
-        height: 25
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 513e12bbe3b12154d8b61e81501c408c
-      internalID: 6887022319851403142
+      spriteID: 46067eb2a6f27264aa103f28156d851c
+      internalID: 850753403565259673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_7
+      name: Enemy 1.2_4
       rect:
         serializedVersion: 2
-        x: 224
-        y: 50
-        width: 32
-        height: 25
+        x: 256
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,20 +258,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a7bba76c7a477a43851abdee9bc3891
-      internalID: 5957987307645184366
+      spriteID: b06dc2745a95b70478475971416f1cf8
+      internalID: 3471711084143634667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_8
+      name: Enemy 1.2_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc92d1da072d9a649a9e07223f3d97e9
+      internalID: -3991021883962996350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1.2_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b33b1bf75a8ac47acd23e36005fa08
+      internalID: -5760543911693439659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1.2_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2f45d1e595962468324f918d2ad740
+      internalID: -3974637543865793226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1.2_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 25
-        width: 32
-        height: 25
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,41 +342,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2539aeb00691c35488620fe6e1109aca
-      internalID: 121371861024997490
+      spriteID: 42c08659f64030748b4520ee3ef4c6ae
+      internalID: -5594722903381117994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 25
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 657fb9b0572992648b0c8e94c6acfc1f
-      internalID: 3146804172381277489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime-Sheet_10
+      name: Enemy 1.2_9
       rect:
         serializedVersion: 2
         x: 64
-        y: 25
-        width: 32
-        height: 25
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,41 +363,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d7ff8f2ebb3b9742b02c4511fe5b20d
-      internalID: -2200864171832323305
+      spriteID: 230264cb9187b01498feb5ee538cd477
+      internalID: 6200630191683923526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 25
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd45566d1df9af54187c7c92ee617c27
-      internalID: 9207829615066030709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime-Sheet_12
+      name: Enemy 1.2_10
       rect:
         serializedVersion: 2
         x: 128
-        y: 25
-        width: 32
-        height: 25
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -413,41 +384,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3c3805e9851a9e4889342d03acb5f6c
-      internalID: -7380300888587303819
+      spriteID: ce511429ead16a84aac9fbd3cefaaced
+      internalID: -3627136891024772522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 25
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4f1b5892564b3b4e805e17c8622920c
-      internalID: 4993349697702114157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime-Sheet_14
+      name: Enemy 1.2_11
       rect:
         serializedVersion: 2
         x: 192
-        y: 25
-        width: 32
-        height: 25
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -455,41 +405,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1935f1109fb71554d81a59a0cd5cc177
-      internalID: 3913231095913793702
+      spriteID: 01764f3e8ba17c543a5b7e291e1bc031
+      internalID: 8363528568878816504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 25
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80b54839aba90f34f88f1dcdff860bd3
-      internalID: 4811920900910276441
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime-Sheet_16
+      name: Enemy 1.2_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 25
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -497,41 +426,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16d2628ca875496468e55902a86c0675
-      internalID: -7772930111310310504
+      spriteID: 84dd36ffb4f824141a40e83ee8191736
+      internalID: -1198644127468891106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7578cc885fa0a14408b8939fd58dc979
-      internalID: -4570960877372392886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime-Sheet_18
+      name: Enemy 1.2_13
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 32
-        height: 25
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -539,41 +447,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65c332a50fa02c94bb7004ccd3e15772
-      internalID: 1577109790741768683
+      spriteID: 5b458cbc9d585ee4c9eddbc08972e3c5
+      internalID: 3094342574952375879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-Sheet_19
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9dd92fe31891284a87077266cd87a46
-      internalID: -2658792678680092322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime-Sheet_20
+      name: Enemy 1.2_14
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 32
-        height: 25
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -581,8 +468,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a39b480a380f5a041b95bb267f53ba72
-      internalID: 1516403292026958468
+      spriteID: fa6f674cb8173514cb0d923fa253991b
+      internalID: 7492954755084660316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1.2_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce268327809880d4cb38e22cdf44599a
+      internalID: -2871824185258403877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1.2_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f69466868c9813f43931ba6e8c3e763a
+      internalID: -4890390274435696291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1.2_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abced142537c0441b2e990b25de7f27
+      internalID: -3698650164525975811
       vertices: []
       indices: 
       edges: []
@@ -590,7 +540,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a905b0f04a2d64048b19230c7af2e743
+    spriteID: 94903596d93333d4abfc1c5eff8f85b8
     internalID: 0
     vertices: []
     indices: 

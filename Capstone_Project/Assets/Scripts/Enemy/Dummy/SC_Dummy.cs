@@ -24,6 +24,10 @@ public class SC_Dummy : MonoBehaviour
 
     private bool playerOnLeft, knockback;
 
+    private int
+    facingDirection,
+    damageDirection;
+
     private SC_PlayerMovement pc;
     private GameObject aliveGO, brokenTopGO, brokenBotGO;
     private Rigidbody2D rbAlive, rbBrokenTop, rbBrokenBot;
@@ -54,12 +58,21 @@ public class SC_Dummy : MonoBehaviour
         CheckKnockBack();
     }
 
-    private void Damage(float amount)
+    private void Damage(float[] attackDetails)
     {
-        currentHealth -= amount;
+        currentHealth -= attackDetails[0];
         playerFacingDirection = pc.GetFacingDirection();
 
         Instantiate(hitParticle, aliveAnim.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+
+        if (attackDetails[1] > aliveGO.transform.position.x)
+        {
+            damageDirection = -1;
+        }
+        else
+        {
+            damageDirection = 1;
+        }
 
         if (playerFacingDirection == 1)
         {

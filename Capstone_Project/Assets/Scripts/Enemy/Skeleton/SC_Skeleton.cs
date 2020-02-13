@@ -24,6 +24,10 @@ public class SC_Skeleton : MonoBehaviour
 
     private int playerFacingDirection;
 
+    private int
+        facingDirection,
+        damageDirection;
+
     private bool playerOnLeft, knockback, checkTrigger;
 
     private SC_PlayerMovement pc;
@@ -54,12 +58,21 @@ public class SC_Skeleton : MonoBehaviour
         CheckKnockBack();
     }
 
-    private void Damage(float amount)
+    private void Damage(float[] attackDetails)
     {
-        currentHealth -= amount;
+        currentHealth -= attackDetails[0];
         playerFacingDirection = pc.GetFacingDirection();
 
         Instantiate(hitParticle, aliveAnim.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+
+        if (attackDetails[1] > aliveGO.transform.position.x)
+        {
+            damageDirection = -1;
+        }
+        else
+        {
+            damageDirection = 1;
+        }
 
         if (playerFacingDirection == 1)
         {
