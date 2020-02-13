@@ -40,8 +40,6 @@ public class SC_EnemyLineOfSight : MonoBehaviour
 
     void Update()
     {
-        UpdateAnimations();
-
         float distToPlayer = Vector2.Distance(transform.position, player.position);
         if (distToPlayer < agroRange)
         {
@@ -58,10 +56,6 @@ public class SC_EnemyLineOfSight : MonoBehaviour
         }
     }
 
-    private void UpdateAnimations()
-    {
-        skeletonAnim.SetBool("isWalking", isWalking);
-    }
 
     void ChasePlayer()
     {
@@ -69,20 +63,20 @@ public class SC_EnemyLineOfSight : MonoBehaviour
         {
             rb2d.velocity = new Vector2(moveSpeed, 0);
             transform.localScale = new Vector2(1, 1);
-            isWalking = true;
+            skeletonAnim.SetBool("isWalking", true);
         }
         else
         {
             rb2d.velocity = new Vector2(-moveSpeed, 0);
             transform.localScale = new Vector2(-1, 1);
-            isWalking = true;
+            skeletonAnim.SetBool("isWalking", true);
         }
-
+        //skeletonAnim.Play("Skeleton_Walk");
     }
 
     void StopChasingPlayer()
     {
         rb2d.velocity = new Vector2(0, 0);
-        isWalking = false;
+        skeletonAnim.SetBool("isWalking", false);
     }
 }
