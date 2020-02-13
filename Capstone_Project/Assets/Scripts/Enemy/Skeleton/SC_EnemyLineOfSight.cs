@@ -14,18 +14,19 @@ public class SC_EnemyLineOfSight : MonoBehaviour
     public GameObject skeletonGO;
 
     [SerializeField]
-    float agroRange;
+    float 
+        agroRange,
+        stoppingDistance;
 
     [SerializeField]
     float moveSpeed;
-
-    public float stoppingDistance;
 
     Rigidbody2D rb2d;
 
     private SC_Skeleton skeletonScript;
 
     private bool isWalking;
+    private float distToPlayer;
 
     private void Start()
     {
@@ -40,7 +41,9 @@ public class SC_EnemyLineOfSight : MonoBehaviour
 
     void Update()
     {
-        float distToPlayer = Vector2.Distance(transform.position, player.position);
+        //float distToPlayer = Vector2.Distance(transform.position, player.position);
+        distToPlayer = Mathf.Abs(transform.position.x - player.position.x);
+
         if (distToPlayer < agroRange)
         {
             ChasePlayer();
@@ -50,16 +53,24 @@ public class SC_EnemyLineOfSight : MonoBehaviour
             StopChasingPlayer();
         }
 
+
         if (skeletonScript.currentHealth <= 0.0f)
         {
             StopChasingPlayer();
         }
     }
 
-
     void ChasePlayer()
     {
-        if(transform.position.x < player.position.x)
+        //Attack
+        if(distToPlayer <= stoppingDistance)
+        {
+            rb2d.velocity = new Vector2(0, 0);
+            skeletonAnim.SetTrigger("isAttacking");
+            skeletonAnim.SetBool("isWalking", false);
+        }
+        //Chase
+        else if(transform.position.x < player.position.x)
         {
             rb2d.velocity = new Vector2(moveSpeed, 0);
             transform.localScale = new Vector2(1, 1);
@@ -71,7 +82,6 @@ public class SC_EnemyLineOfSight : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
             skeletonAnim.SetBool("isWalking", true);
         }
-        //skeletonAnim.Play("Skeleton_Walk");
     }
 
     void StopChasingPlayer()

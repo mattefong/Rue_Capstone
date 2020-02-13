@@ -9,7 +9,6 @@ public class SC_DummyHealth : MonoBehaviour
 
     public GameObject healthBar;
 
-
     // Start is called before the first frame update
     void Start()
     {

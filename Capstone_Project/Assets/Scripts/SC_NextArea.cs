@@ -5,25 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class SC_NextArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject prompt;
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
+        prompt.SetActive(true);
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (Input.GetKeyDown("w") && collision.gameObject.name == "NextArea")
+        if(collision && Input.GetKeyDown(KeyCode.K))
         {
-            Debug.Log("Entered");
-            //SceneManager.LoadScene("Playtest");
+            Debug.Log("u gone");
         }
-        Debug.Log("Entered");
     }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        prompt.SetActive(false);
+    }
+
 }

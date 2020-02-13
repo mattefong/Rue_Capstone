@@ -83,9 +83,6 @@ public class SC_Skeleton : MonoBehaviour
             playerOnLeft = false;
         }
 
-        //aliveAnim.SetBool("playerOnLeft", playerOnLeft);
-        //aliveAnim.SetTrigger("damage");
-
         if (applyKnockback && currentHealth > 0.0f)
         {
             //Knockback
@@ -118,7 +115,6 @@ public class SC_Skeleton : MonoBehaviour
 
     private void Die()
     {
-        //rbAlive.velocity = new Vector2(knockbackSpeedX * playerFacingDirection, knockbackSpeedY);
         aliveAnim.SetBool("isDead", true);
         GetComponentInChildren<Collider2D>().enabled = false;
         GetComponentInChildren<Rigidbody2D>().gravityScale = 0;
