@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SC_Skeleton : MonoBehaviour
+public class SC_Dummy : MonoBehaviour
 {
     [SerializeField]
     private float knockbackSpeedX, knockbackSpeedY, knockbackDuration, knockbackDeathSpeedX, knockbackDeathSpeedY, deathTorque;
-
+    
     public float maxHealth;
 
     [SerializeField]
@@ -20,18 +20,18 @@ public class SC_Skeleton : MonoBehaviour
 
     public float currentHealth;
 
-    public float speed;
-
     private int playerFacingDirection;
 
-    private bool playerOnLeft, knockback, checkTrigger;
+    private bool playerOnLeft, knockback;
+
+    private int
+    facingDirection,
+    damageDirection;
 
     private SC_PlayerMovement pc;
-    private GameObject aliveGO;
-    private Rigidbody2D rbAlive, rbDead;
+    private GameObject aliveGO, brokenTopGO, brokenBotGO;
+    private Rigidbody2D rbAlive, rbBrokenTop, rbBrokenBot;
     private Animator aliveAnim;
-
-    public Transform target;
 
     private void Start()
     {
@@ -40,13 +40,17 @@ public class SC_Skeleton : MonoBehaviour
         pc = GameObject.Find("Player").GetComponent<SC_PlayerMovement>();
 
         aliveGO = transform.Find("Alive").gameObject;
+        brokenTopGO = transform.Find("Broken Top").gameObject;
+        brokenBotGO = transform.Find("Broken Bottom").gameObject;
 
         aliveAnim = aliveGO.GetComponent<Animator>();
         rbAlive = aliveGO.GetComponent<Rigidbody2D>();
+        rbBrokenTop = brokenTopGO.GetComponent<Rigidbody2D>();
+        rbBrokenBot = brokenBotGO.GetComponent<Rigidbody2D>();
 
         aliveGO.SetActive(true);
-
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        brokenTopGO.SetActive(false);
+        brokenBotGO.SetActive(false);
     }
 
     private void Update()
@@ -54,12 +58,21 @@ public class SC_Skeleton : MonoBehaviour
         CheckKnockBack();
     }
 
-    private void Damage(float amount)
+    private void Damage(float[] attackDetails)
     {
-        currentHealth -= amount;
+        currentHealth -= attackDetails[0];
         playerFacingDirection = pc.GetFacingDirection();
 
         Instantiate(hitParticle, aliveAnim.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+
+        if (attackDetails[1] > aliveGO.transform.position.x)
+        {
+            damageDirection = -1;
+        }
+        else
+        {
+            damageDirection = 1;
+        }
 
         if (playerFacingDirection == 1)
         {
@@ -70,8 +83,8 @@ public class SC_Skeleton : MonoBehaviour
             playerOnLeft = false;
         }
 
-        //aliveAnim.SetBool("playerOnLeft", playerOnLeft);
-        //aliveAnim.SetTrigger("damage");
+        aliveAnim.SetBool("playerOnLeft", playerOnLeft);
+        aliveAnim.SetTrigger("damage");
 
         if (applyKnockback && currentHealth > 0.0f)
         {
@@ -91,8 +104,6 @@ public class SC_Skeleton : MonoBehaviour
         knockback = true;
         knockbackStart = Time.time;
         rbAlive.velocity = new Vector2(knockbackSpeedX * playerFacingDirection, knockbackSpeedY);
-        aliveAnim.SetTrigger("isHurt");
-
     }
 
     private void CheckKnockBack()
@@ -106,34 +117,16 @@ public class SC_Skeleton : MonoBehaviour
 
     private void Die()
     {
-        //rbAlive.velocity = new Vector2(knockbackSpeedX * playerFacingDirection, knockbackSpeedY);
-        aliveAnim.SetBool("isDead", true);
-        GetComponentInChildren<Collider2D>().enabled = false;
-        GetComponentInChildren<Rigidbody2D>().gravityScale = 0;
-        this.enabled = false;
-    }
+        aliveGO.SetActive(false);
+        brokenTopGO.SetActive(true);
+        brokenBotGO.SetActive(true);
 
-    private void Follow()
-    {
-        if (checkTrigger)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
-        }
-    }
+        brokenTopGO.transform.position = aliveGO.transform.position;
+        brokenBotGO.transform.position = aliveGO.transform.position;
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Player")
-        {
-            checkTrigger = true;
-        }
-    }
+        rbBrokenBot.velocity = new Vector2(knockbackSpeedX * playerFacingDirection, knockbackSpeedY);
+        rbBrokenTop.velocity = new Vector2(knockbackDeathSpeedX * playerFacingDirection, knockbackDeathSpeedY);
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.tag == "Player")
-        {
-            checkTrigger = false;
-        }
+        rbBrokenTop.AddTorque(deathTorque * -playerFacingDirection, ForceMode2D.Impulse);
     }
 }

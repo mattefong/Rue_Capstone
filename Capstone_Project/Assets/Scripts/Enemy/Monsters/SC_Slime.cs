@@ -18,7 +18,6 @@ public class SC_Slime : MonoBehaviour
         groundCheckDistance,
         wallCheckDistance,
         movementSpeed,
-        maxHealth,
         knockbackDuration;
 
     [SerializeField]
@@ -32,8 +31,17 @@ public class SC_Slime : MonoBehaviour
     [SerializeField]
     private Vector2 knockbackSpeed;
 
-    private float
+    [SerializeField]
+    private GameObject
+        hitParticle,
+        deathChunkParticle,
+        deathBloodParticle;
+
+    public float
         currentHealth,
+        maxHealth;
+
+    private float
         knockbackStartTime;
 
     private int
@@ -56,6 +64,7 @@ public class SC_Slime : MonoBehaviour
         aliveRb = alive.GetComponent<Rigidbody2D>();
         aliveAnim = alive.GetComponent<Animator>();
 
+        currentHealth = maxHealth;
         facingDirection = 1;
     }
 
@@ -129,6 +138,8 @@ public class SC_Slime : MonoBehaviour
     private void EnterDeadState()
     {
         //Spawn chunks and blood
+        Instantiate(deathChunkParticle, alive.transform.position, deathChunkParticle.transform.rotation);
+        Instantiate(deathBloodParticle, alive.transform.position, deathBloodParticle.transform.rotation);
         Destroy(gameObject);
     }
 
@@ -146,6 +157,8 @@ public class SC_Slime : MonoBehaviour
     private void Damage(float[] attackDetails)
     {
         currentHealth -= attackDetails[0];
+
+        Instantiate(hitParticle, alive.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
 
         if(attackDetails[1] > alive.transform.position.x)
         {
@@ -170,7 +183,7 @@ public class SC_Slime : MonoBehaviour
 
     private void Flip()
     {
-        facingDirection *= 1;
+        facingDirection *= -1;
         alive.transform.Rotate(0.0f, 180.0f, 0.0f);
 
     }
