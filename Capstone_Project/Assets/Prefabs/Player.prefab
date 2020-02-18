@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5694465346512710759}
   - component: {fileID: 5694465346512710752}
-  - component: {fileID: 405113330081424722}
+  - component: {fileID: 546349286937662361}
   - component: {fileID: 5694465346512710758}
   - component: {fileID: 5694465346512710755}
   - component: {fileID: 4719166198557143070}
@@ -181,7 +181,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &405113330081424722
+--- !u!114 &546349286937662361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,9 +190,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5694465346512710764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddf186a1814a704b8acfc8d8d4b24e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f269c8da74d62f48ba72ff322325b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  deathChunkParticle: {fileID: 7949754357955071460, guid: a11228395ab85d040ac3df2e9b510667,
+    type: 3}
+  deathBloodParticle: {fileID: 1967668825662188603, guid: e4eaaa51efe90da4f97bc4d905c2c89c,
+    type: 3}
 --- !u!114 &5694465346512710758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0614de56b69de64993ab0ae8765217f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackDuration: 0.1
+  knockbackSpeed: {x: 10, y: 10}
   amountOfJumps: 1
   movementSpeed: 10
   jumpForce: 16

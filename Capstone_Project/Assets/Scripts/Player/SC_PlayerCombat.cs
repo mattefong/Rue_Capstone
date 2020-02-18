@@ -22,10 +22,15 @@ public class SC_PlayerCombat : MonoBehaviour
 
     private Animator anim;
 
+    private SC_PlayerMovement PC;
+    private SC_PlayerStats PS;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
         anim.SetBool("canAttack", combatEnabled);
+        PC = GetComponent<SC_PlayerMovement>();
+        PS = GetComponent<SC_PlayerStats>();
     }
 
     private void Update()
@@ -94,6 +99,26 @@ public class SC_PlayerCombat : MonoBehaviour
         isAttacking = false;
         anim.SetBool("isAttacking", isAttacking);
         anim.SetBool("attack1", false);
+    }
+
+    private void Damage(float[] attackDetails)
+    {
+        int direction;
+
+        PS.DecreaseHealth(attackDetails[0]);
+
+        //Damage player here using attackDetails[0]
+
+        if(attackDetails[1] < transform.position.x)
+        {
+            direction = 1;
+        }
+        else
+        {
+            direction = -1;
+        }
+
+        PC.Knockback(direction);
     }
 
     private void OnDrawGizmos()

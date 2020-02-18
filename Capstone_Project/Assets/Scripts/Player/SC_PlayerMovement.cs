@@ -10,6 +10,10 @@ public class SC_PlayerMovement : MonoBehaviour
     private float jumpTimer;
     private float turnTimer;
     private float wallJumpTimer;
+    private float knockbackStartTime;
+
+    [SerializeField]
+    private float knockbackDuration;
 
     [Space]
     [Header("Private Ints")]
@@ -34,7 +38,10 @@ public class SC_PlayerMovement : MonoBehaviour
     private bool isTouchingLedge;
     private bool canClimbLedge = false;
     private bool ledgeDetected;
+    private bool knockback;
 
+    public Vector2 knockbackSpeed;
+    
     [Space]
     [Header("Private Vector2's")]
     private Vector2 ledgePosBot;
@@ -105,6 +112,7 @@ public class SC_PlayerMovement : MonoBehaviour
         CheckIfWallSliding();
         CheckJump();
         CheckLedgeClimb();
+        CheckKnockback();
     }
 
     void FixedUpdate()
@@ -123,6 +131,22 @@ public class SC_PlayerMovement : MonoBehaviour
         else
         {
             isWallSliding = false;
+        }
+    }
+
+    public void Knockback(int direction)
+    {
+        knockback = true;
+        knockbackStartTime = Time.time;
+        rb.velocity = new Vector2(knockbackSpeed.x * direction, knockbackSpeed.y);
+    }
+
+    private void CheckKnockback()
+    {
+        if(Time.time >= knockbackStartTime + knockbackDuration && knockback)
+        {
+            knockback = false;
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
     }
 
@@ -364,11 +388,11 @@ public class SC_PlayerMovement : MonoBehaviour
 
     private void ApplyMovement()
     {
-        if (!isGrounded && !isWallSliding && movementInputDirection == 0)
+        if (!isGrounded && !isWallSliding && movementInputDirection == 0 && !knockback)
         {
             rb.velocity = new Vector2(rb.velocity.x * airDragMultiplier, rb.velocity.y);
         }
-        else if (canMove)
+        else if (canMove && !knockback)
         {
             rb.velocity = new Vector2(movementSpeed * movementInputDirection, rb.velocity.y);
         }
@@ -394,7 +418,7 @@ public class SC_PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        if (!isWallSliding && canFlip)
+        if (!isWallSliding && canFlip && !knockback)
         {
             facingDirection *= -1;
             isFacingRight = !isFacingRight;
