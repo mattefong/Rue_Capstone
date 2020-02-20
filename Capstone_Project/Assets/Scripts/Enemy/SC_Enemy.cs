@@ -4,40 +4,29 @@ using UnityEngine;
 
 public class SC_Enemy : MonoBehaviour
 {
-    public Animator animator;
+    public GameObject deathEffect;
+    private SC_Dummy dummy;
 
-    public int maxHealth = 100;
-    int currentHealth;
+    public int health;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        dummy = GetComponent<SC_Dummy>();
+
+        dummy.currentHealth = dummy.maxHealth;
+    }
+
+    private void Update()
+    {
+        if (dummy.currentHealth < 0)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+        }
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-
-        animator.SetTrigger("Hurt");
-
-        //Play Hurt Animation
-        if(currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        Debug.Log("Enemy died!");
-
-        //Die animation
-        animator.SetBool("IsDead", true);
-
-        //Disable the enemy
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<Rigidbody2D>().gravityScale = 0;
-        this.enabled = false;
+        dummy.currentHealth -= damage;
     }
 }

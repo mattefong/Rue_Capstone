@@ -14,11 +14,17 @@ public class SC_PlayerCombat : MonoBehaviour
     [SerializeField]
     private LayerMask whatIsDamageable;
 
-    private bool gotInput, isAttacking, isFirstAttack, pcAbility;
+    private bool gotInput, isAttacking, isFirstAttack;
 
     private float lastInputTime = Mathf.NegativeInfinity;
 
     public float[] attackDetails = new float[2];
+
+    public GameObject projectile;
+    public Transform firePosition;
+
+    private float timeBtwShots;
+    public float startTimeBtwShots;
 
     private Animator anim;
 
@@ -50,10 +56,20 @@ public class SC_PlayerCombat : MonoBehaviour
                 lastInputTime = Time.time;
             }
         }
+
+        //Fireball
         if (Input.GetMouseButtonDown(1))
         {
-            pcAbility = true;
-            anim.SetBool("ability", pcAbility);
+            if(timeBtwShots <= 0)
+            {
+                GameObject g = Instantiate(projectile, firePosition.position, transform.rotation);
+                g.GetComponent<SC_Projectile>().direction = PC.GetFacingDirection();
+                timeBtwShots = startTimeBtwShots;
+            }
+            else
+            {
+                timeBtwShots -= Time.deltaTime;
+            }
         }
     }
 
@@ -120,6 +136,7 @@ public class SC_PlayerCombat : MonoBehaviour
 
         PC.Knockback(direction);
     }
+
 
     private void OnDrawGizmos()
     {

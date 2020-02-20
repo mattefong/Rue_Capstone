@@ -16,6 +16,8 @@ public class SC_PlayerStats : MonoBehaviour
 
     private SC_GameManager GM;
 
+    private Animator anim;
+
     public GameObject healthBar;
 
     public void Update()
