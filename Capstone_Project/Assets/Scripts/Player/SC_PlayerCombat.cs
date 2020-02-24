@@ -16,6 +16,8 @@ public class SC_PlayerCombat : MonoBehaviour
 
     private bool gotInput, isAttacking, isFirstAttack;
 
+    //public int hitCounter = 0;
+
     private float lastInputTime = Mathf.NegativeInfinity;
 
     public float[] attackDetails = new float[2];
@@ -82,10 +84,10 @@ public class SC_PlayerCombat : MonoBehaviour
             {
                 gotInput = false;
                 isAttacking = true;
-                isFirstAttack = !isFirstAttack;
                 anim.SetBool("attack1", true);
-                anim.SetBool("firstAttack", isFirstAttack);
                 anim.SetBool("isAttacking", isAttacking);
+                isFirstAttack = !isFirstAttack;
+                anim.SetBool("firstAttack", isFirstAttack);
             }
         }
 

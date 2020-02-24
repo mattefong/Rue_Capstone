@@ -94,6 +94,8 @@ public class SC_PlayerMovement : MonoBehaviour
     [Header("Public Layer Mask")]
     public LayerMask whatIsGround;
 
+    public ParticleSystem dust;
+
     void Start() 
     {
         rb = GetComponent<Rigidbody2D>();
@@ -111,7 +113,7 @@ public class SC_PlayerMovement : MonoBehaviour
         CheckIfCanJump();
         CheckIfWallSliding();
         CheckJump();
-        CheckLedgeClimb();
+        //CheckLedgeClimb();
         CheckKnockback();
     }
 
@@ -360,6 +362,7 @@ public class SC_PlayerMovement : MonoBehaviour
             jumpTimer = 0;
             isAttemptingToJump = false;
             checkJumpMultiplier = true;
+            CreateDust();
         }
     }
 
@@ -420,6 +423,7 @@ public class SC_PlayerMovement : MonoBehaviour
     {
         if (!isWallSliding && canFlip && !knockback)
         {
+            CreateDust();
             facingDirection *= -1;
             isFacingRight = !isFacingRight;
             transform.Rotate(0.0f, 180.0f, 0.0f);
@@ -431,6 +435,11 @@ public class SC_PlayerMovement : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
 
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y, wallCheck.position.z));
+    }
+
+    private void CreateDust()
+    {
+        dust.Play();
     }
 
 }
