@@ -7,8 +7,6 @@ public class SC_Enemy : MonoBehaviour
     public GameObject deathEffect;
     private SC_Dummy dummy;
 
-    public int health;
-
     // Start is called before the first frame update
     void Start()
     {

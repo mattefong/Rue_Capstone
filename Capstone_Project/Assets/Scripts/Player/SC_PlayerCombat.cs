@@ -60,19 +60,21 @@ public class SC_PlayerCombat : MonoBehaviour
         }
 
         //Fireball
-        if (Input.GetMouseButtonDown(1))
-        {
-            if(timeBtwShots <= 0)
-            {
-                GameObject g = Instantiate(projectile, firePosition.position, transform.rotation);
-                g.GetComponent<SC_Projectile>().direction = PC.GetFacingDirection();
-                timeBtwShots = startTimeBtwShots;
-            }
-            else
-            {
-                timeBtwShots -= Time.deltaTime;
-            }
-        }
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    //PS.DecreaseMana(5f);
+
+        //    if (timeBtwShots <= 0)
+        //    {
+        //        GameObject g = Instantiate(projectile, firePosition.position, transform.rotation);
+        //        g.GetComponent<SC_Projectile>().direction = PC.GetFacingDirection();
+        //        timeBtwShots = startTimeBtwShots;
+        //    }
+        //    else
+        //    {
+        //        timeBtwShots -= Time.deltaTime;
+        //    }
+        //}
     }
 
     private void CheckAttacks()

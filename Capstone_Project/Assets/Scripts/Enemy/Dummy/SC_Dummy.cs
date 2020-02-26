@@ -98,7 +98,6 @@ public class SC_Dummy : MonoBehaviour
         {
             //Knockback
             KnockBack();
-
         }
         if (currentHealth <= 0.0f)
         {

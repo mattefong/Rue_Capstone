@@ -5,18 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class SC_Debug : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject menuUI;
+
     void Start()
     {
-        
+        menuUI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) {
+        DebugKey();
+        MenuKey();
+    }
+
+    void DebugKey()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
+        }
+    }
+
+    void MenuKey()
+    {
+        if (Input.GetKey(KeyCode.P))
+        {
+            menuUI.SetActive(true);
+            Time.timeScale = 0.0f;
         }
     }
 }

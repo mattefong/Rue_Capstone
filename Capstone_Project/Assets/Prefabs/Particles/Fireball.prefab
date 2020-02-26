@@ -71,6 +71,7 @@ MonoBehaviour:
   projectileSpeed: 10
   lifeTime: 1
   distance: 0.5
+  damage: 50
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 768
