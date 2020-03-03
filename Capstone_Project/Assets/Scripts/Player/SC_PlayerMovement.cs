@@ -441,5 +441,4 @@ public class SC_PlayerMovement : MonoBehaviour
     {
         dust.Play();
     }
-
 }
