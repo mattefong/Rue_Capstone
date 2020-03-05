@@ -11,6 +11,9 @@ public class SC_PlayerMovement : MonoBehaviour
     private float turnTimer;
     private float wallJumpTimer;
     private float knockbackStartTime;
+    private float dashTimeLeft;
+    private float lastImageXpos;
+    private float lastDash = -100f;
 
     [SerializeField]
     private float knockbackDuration;
@@ -39,6 +42,7 @@ public class SC_PlayerMovement : MonoBehaviour
     private bool canClimbLedge = false;
     private bool ledgeDetected;
     private bool knockback;
+    private bool isDashing;
 
     public Vector2 knockbackSpeed;
     
@@ -78,6 +82,10 @@ public class SC_PlayerMovement : MonoBehaviour
     public float ledgeClimbYOffset1 = 0f;
     public float ledgeClimbXOffset2 = 0f;
     public float ledgeClimbYOffset2 = 0f;
+    public float dashTime;
+    public float dashSpeed;
+    public float distanceBetweenImages;
+    public float dashCoolDown;
 
     [Space]
     [Header("Public Vector 2's")]
@@ -115,6 +123,7 @@ public class SC_PlayerMovement : MonoBehaviour
         CheckJump();
         //CheckLedgeClimb();
         CheckKnockback();
+        CheckDash();
     }
 
     void FixedUpdate()
@@ -290,6 +299,13 @@ public class SC_PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * variableJumpHeightMultiplier);
         }
 
+        if (Input.GetButtonDown("Dash"))
+        {
+            if(Time.time >= (lastDash+ dashCoolDown))
+            AttemptToDash();
+        }
+
+
         if (Input.GetButtonDown("Horizontal") && isTouchingWall)
         {
             if(!isGrounded && movementInputDirection != facingDirection)
@@ -307,6 +323,44 @@ public class SC_PlayerMovement : MonoBehaviour
 
             if(turnTimer <= 0)
             {
+                canMove = true;
+                canFlip = true;
+            }
+        }
+    }
+
+    private void AttemptToDash()
+    {
+        isDashing = true;
+        dashTimeLeft = dashTime;
+        lastDash = Time.time;
+
+        SC_PlayerAfterImagePool.Instance.GetFromPool();
+        lastImageXpos = transform.position.x;
+    }
+
+    private void CheckDash()
+    {
+        if (isDashing)
+        {
+            if(dashTimeLeft > 0)
+            {
+                canMove = false;
+                canFlip = false;
+                rb.velocity = new Vector2(dashSpeed * facingDirection, 0.0f);
+                dashTimeLeft -= Time.deltaTime;
+
+                if(Mathf.Abs(transform.position.x - lastImageXpos) > distanceBetweenImages)
+                {
+                    SC_PlayerAfterImagePool.Instance.GetFromPool();
+                    lastImageXpos = transform.position.x;
+                }
+                //anim.SetBool("isDashing", isDashing);
+            }
+
+            if (dashTimeLeft <= 0 || isTouchingWall)
+            {
+                isDashing = false;
                 canMove = true;
                 canFlip = true;
             }

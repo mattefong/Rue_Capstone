@@ -4755,7 +4755,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 443735761}
-  - component: {fileID: 443735760}
   - component: {fileID: 443735759}
   m_Layer: 11
   m_Name: NPCInteract
@@ -4790,19 +4789,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.93767005, y: 2.373025}
   m_EdgeRadius: 0
---- !u!114 &443735760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443735758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddf186a1814a704b8acfc8d8d4b24e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelLoader: {fileID: 0}
 --- !u!4 &443735761
 Transform:
   m_ObjectHideFlags: 0
@@ -40057,6 +40043,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f63515e827f442e4f868212c65ff5183, type: 3}
+--- !u!1 &1321959316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321959318}
+  - component: {fileID: 1321959317}
+  m_Layer: 0
+  m_Name: PlayerAfterImagePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1321959317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321959316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217170d9bbbc9c34fb15ac63b39c1452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afterImagePrefab: {fileID: 814080815320828511, guid: f4377ace34e6a964a924b1f0cfa297d5,
+    type: 3}
+--- !u!4 &1321959318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321959316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1380500137
 GameObject:
   m_ObjectHideFlags: 0
@@ -44795,6 +44826,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -16.944014
       objectReference: {fileID: 0}
+    - target: {fileID: 7353878775398466356, guid: 899a6062a72d91d4daaec33a9cb99f52,
+        type: 3}
+      propertyPath: m_CameraCutEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353878775398466356, guid: 899a6062a72d91d4daaec33a9cb99f52,
+        type: 3}
+      propertyPath: m_CameraCutEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353878775398466356, guid: 899a6062a72d91d4daaec33a9cb99f52,
+        type: 3}
+      propertyPath: m_CameraCutEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 899a6062a72d91d4daaec33a9cb99f52, type: 3}
 --- !u!1001 &5694465346811978907
@@ -44873,6 +44919,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 18.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694465346512710758, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: dashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694465346512710758, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694465346512710758, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: distanceBetweenImages
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694465346512710758, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: dashCoolDown
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694465346512710755, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694465346512710755, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: timeBtwShots
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6109aa6892cee0f4eac123e5c366ea87, type: 3}

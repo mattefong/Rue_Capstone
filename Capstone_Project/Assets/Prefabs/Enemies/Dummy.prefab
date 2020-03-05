@@ -580,6 +580,7 @@ GameObject:
   - component: {fileID: 8984484426011059814}
   - component: {fileID: 8984484426011059815}
   - component: {fileID: 4161348806954929329}
+  - component: {fileID: 1073817314}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Untagged
@@ -640,3 +641,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 592731111}
+--- !u!114 &1073817314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8984484426011059812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1ddb7c7813d2543b1d43fc24a1e07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 1110264763428426, guid: 9490341ce53864441ba1e444d37f0942,
+    type: 3}
