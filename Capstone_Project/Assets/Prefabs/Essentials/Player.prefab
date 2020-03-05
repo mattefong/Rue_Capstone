@@ -5611,15 +5611,14 @@ MonoBehaviour:
   jumpTimerSet: 0.15
   turnTimerSet: 0.1
   wallJumpTimerSet: 0.5
-  ledgeClimbXOffset1: 0.3
-  ledgeClimbYOffset1: 0
-  ledgeClimbXOffset2: 0.5
-  ledgeClimbYOffset2: 2
+  dashTime: 0.2
+  dashSpeed: 40
+  distanceBetweenImages: 0.1
+  dashCoolDown: 2.5
   wallHopDirection: {x: 1, y: 0.5}
   wallJumpDirection: {x: 1, y: 2}
   groundCheck: {fileID: 5694465345874971795}
   wallCheck: {fileID: 5694465346883453047}
-  ledgeCheck: {fileID: 5694465344841034496}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -5650,7 +5649,8 @@ MonoBehaviour:
   projectile: {fileID: 1881283545029342452, guid: d2e3bd0906ba33248b4e05dd2251e69e,
     type: 3}
   firePosition: {fileID: 1016638357}
-  startTimeBtwShots: 0
+  timeBtwShots: 0.5
+  startTimeBtwShots: 0.8
 --- !u!114 &4719166198557143070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5681,7 +5681,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: 010c3ddc31eeceb45b3300937c4f8a32, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -5880,6 +5880,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -16.800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996892448684965138, guid: c0ca52838b4abc74db6acb0a66b7b6ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 103.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996892448684965138, guid: c0ca52838b4abc74db6acb0a66b7b6ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18.400024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0ca52838b4abc74db6acb0a66b7b6ae, type: 3}

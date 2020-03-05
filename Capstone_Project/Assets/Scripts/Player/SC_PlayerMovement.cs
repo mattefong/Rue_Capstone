@@ -38,19 +38,10 @@ public class SC_PlayerMovement : MonoBehaviour
     private bool canMove;
     private bool canFlip;
     private bool hasWallJumped;
-    private bool isTouchingLedge;
-    private bool canClimbLedge = false;
-    private bool ledgeDetected;
     private bool knockback;
     private bool isDashing;
 
     public Vector2 knockbackSpeed;
-    
-    [Space]
-    [Header("Private Vector2's")]
-    private Vector2 ledgePosBot;
-    private Vector2 ledgePos1;
-    private Vector2 ledgePos2;
 
     [HideInInspector]
     private Rigidbody2D rb;
@@ -77,11 +68,7 @@ public class SC_PlayerMovement : MonoBehaviour
     public float wallJumpTimerSet = 0.5f;
 
     [Space]
-    [Header("Adjust Ledge Climb offsets")]
-    public float ledgeClimbXOffset1 = 0f;
-    public float ledgeClimbYOffset1 = 0f;
-    public float ledgeClimbXOffset2 = 0f;
-    public float ledgeClimbYOffset2 = 0f;
+    [Header("Adjust Dash")]
     public float dashTime;
     public float dashSpeed;
     public float distanceBetweenImages;
@@ -96,7 +83,6 @@ public class SC_PlayerMovement : MonoBehaviour
     [Header("Public Transforms")]
     public Transform groundCheck;
     public Transform wallCheck;
-    public Transform ledgeCheck;
 
     [Space]
     [Header("Public Layer Mask")]
@@ -121,7 +107,6 @@ public class SC_PlayerMovement : MonoBehaviour
         CheckIfCanJump();
         CheckIfWallSliding();
         CheckJump();
-        //CheckLedgeClimb();
         CheckKnockback();
         CheckDash();
     }
@@ -135,7 +120,7 @@ public class SC_PlayerMovement : MonoBehaviour
     //Checks if the player can wall slide
     private void CheckIfWallSliding()
     {
-        if(isTouchingWall && movementInputDirection == facingDirection && rb.velocity.y < 0 && !canClimbLedge)
+        if(isTouchingWall && movementInputDirection == facingDirection && rb.velocity.y < 0)
         {
             isWallSliding = true;
         }
@@ -161,59 +146,12 @@ public class SC_PlayerMovement : MonoBehaviour
         }
     }
 
-    //Checks if the player can Climb the ledge
-    private void CheckLedgeClimb()
-    {
-        if(ledgeDetected && !canClimbLedge)
-        {
-            canClimbLedge = true;
-            if (isFacingRight)
-            {
-                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x + wallCheckDistance) - ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbXOffset1);
-                ledgePos2 = new Vector2(Mathf.Floor(ledgePosBot.x + wallCheckDistance) + ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset2);
-            }
-            else
-            {
-                ledgePos1 = new Vector2(Mathf.Ceil(ledgePosBot.x - wallCheckDistance) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
-                ledgePos2 = new Vector2(Mathf.Ceil(ledgePosBot.x - wallCheckDistance) - ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset2);
-            }
-
-            canMove = false;
-            canFlip = false;
-
-            anim.SetBool("canClimbLedge", canClimbLedge);
-        }
-
-        if (canClimbLedge)
-        {
-            transform.position = ledgePos1;
-        }
-    }
-
-    //Ledge Climbing finished function
-    public void FinishLedgeClimb()
-    {
-        canClimbLedge = false;
-        transform.position = ledgePos2;
-        canMove = true;
-        canFlip = true;
-        ledgeDetected = false;
-        anim.SetBool("canClimbLedge", canClimbLedge);
-    }
-
     //Uses overlap circles to determine what object the player is touching
     private void CheckSurroundings()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
         
         isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
-        isTouchingLedge = Physics2D.Raycast(ledgeCheck.position, transform.right, wallCheckDistance, whatIsGround);
-
-        if(isTouchingWall && !isTouchingLedge && !ledgeDetected)
-        {
-            ledgeDetected = true;
-            ledgePosBot = wallCheck.position;
-        }
     }
 
     public int GetFacingDirection()
@@ -364,6 +302,7 @@ public class SC_PlayerMovement : MonoBehaviour
                 canMove = true;
                 canFlip = true;
             }
+            FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
         }
     }
 

@@ -8,7 +8,7 @@ public class SC_Projectile : MonoBehaviour
     public float lifeTime;
 
     public float distance;
-    public int damage;
+    public float damage;
 
     public LayerMask whatIsSolid;
 
@@ -31,7 +31,7 @@ public class SC_Projectile : MonoBehaviour
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 Debug.Log("Enemy takes damage");
-                hitInfo.collider.GetComponent<SC_Enemy>().TakeDamage(damage);
+                hitInfo.collider.transform.parent.GetComponent<SC_Enemy>().TakeDamage(damage);
             }
             DestroyProjectile();
         }
