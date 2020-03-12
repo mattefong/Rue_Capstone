@@ -302,7 +302,6 @@ public class SC_PlayerMovement : MonoBehaviour
                 canMove = true;
                 canFlip = true;
             }
-            FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
         }
     }
 

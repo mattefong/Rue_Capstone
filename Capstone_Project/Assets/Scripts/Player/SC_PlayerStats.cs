@@ -5,7 +5,7 @@ using UnityEngine;
 public class SC_PlayerStats : MonoBehaviour
 {
     [SerializeField]
-    private float maxHealth, maxMana;
+    private float maxHealth, maxMana, invincibilityDurationSeconds, delayBetweenInvincibilityFlashes;
 
     [SerializeField]
     private GameObject
@@ -13,6 +13,8 @@ public class SC_PlayerStats : MonoBehaviour
         deathBloodParticle;
 
     private float currentHealth, currentMana;
+
+    private bool isInvincible = false;
 
     private SC_GameManager GM;
 
@@ -37,11 +39,15 @@ public class SC_PlayerStats : MonoBehaviour
     public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;
+        if (isInvincible) return;
 
         if(currentHealth <= 0.0f)
         {
             Die();
+            return;
         }
+
+        StartCoroutine(BecomeTemporariltyInvincible());
     }
 
     public void DecreaseMana(float amount)
@@ -55,5 +61,22 @@ public class SC_PlayerStats : MonoBehaviour
         Instantiate(deathBloodParticle, transform.position, deathBloodParticle.transform.rotation);
         GM.Respawn();
         Destroy(gameObject);
+    }
+
+
+    //Invincibility Frames
+    private IEnumerator BecomeTemporariltyInvincible()
+    {
+        //logic
+        Debug.Log("Player turned invincible!");
+        isInvincible = true;
+
+        for(float i = 0; i < invincibilityDurationSeconds; i += delayBetweenInvincibilityFlashes)
+        {
+            yield return new WaitForSeconds(delayBetweenInvincibilityFlashes);
+        }
+
+        Debug.Log("Player is no longer invincible!");
+        isInvincible = false;
     }
 }
