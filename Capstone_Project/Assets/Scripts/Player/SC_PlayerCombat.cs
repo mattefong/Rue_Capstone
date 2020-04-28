@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SC_PlayerCombat : MonoBehaviour
 {
@@ -33,6 +34,13 @@ public class SC_PlayerCombat : MonoBehaviour
     private SC_PlayerMovement PC;
     private SC_PlayerStats PS;
 
+    public bool ready = false;
+    public float downTime, upTime, pressTime = 0;
+    public float countDown = 1.0f;
+    public Image bombBar;
+
+    public GameObject damageNumber;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -60,21 +68,45 @@ public class SC_PlayerCombat : MonoBehaviour
         }
 
         //Fireball
-        if (Input.GetButton("Fire2"))
+        if (Input.GetButtonDown("Fire2") && ready == false)
         {
             //PS.DecreaseMana(5f);
-
-            if (timeBtwShots <= 0)
-            {
-                GameObject g = Instantiate(projectile, firePosition.position, transform.rotation);
-                g.GetComponent<SC_Projectile>().direction = PC.GetFacingDirection();
-                timeBtwShots = startTimeBtwShots;
-            }
-            else
-            {
-                timeBtwShots -= Time.deltaTime;
-            }
+            downTime = Time.time;
+            pressTime = downTime + countDown;
+            ready = true;
         }
+
+        if (Input.GetButtonUp("Fire2"))
+        {
+            ready = false;
+        }
+
+        if (Time.time >= pressTime && ready == true)
+        {
+            GameObject g = Instantiate(projectile, firePosition.position, transform.rotation);
+            g.GetComponent<SC_Projectile>().direction = PC.GetFacingDirection();
+            timeBtwShots = startTimeBtwShots;
+        }
+
+        if (ready)
+        {
+            bombBar.fillAmount = Time.time - downTime / countDown;
+        }
+        else
+        {
+            bombBar.fillAmount = 0;
+        }
+
+        //if (timeBtwShots <= 0)
+        //{
+        //    GameObject g = Instantiate(projectile, firePosition.position, transform.rotation);
+        //    g.GetComponent<SC_Projectile>().direction = PC.GetFacingDirection();
+        //    timeBtwShots = startTimeBtwShots;
+        //}
+        //else
+        //{
+        //    timeBtwShots -= Time.deltaTime;
+        //}
     }
 
     private void CheckAttacks()
@@ -110,6 +142,10 @@ public class SC_PlayerCombat : MonoBehaviour
         foreach (Collider2D collider in detectedObjects)
         {
             collider.transform.parent.SendMessage("Damage", attackDetails);
+            
+            //Damage Number Pop Up
+            var clone = (GameObject) Instantiate(damageNumber, attack1HitBoxPos.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<SC_FloatingNumbers>().damageNumber = whatIsDamageable;
             //Instantiate hit particle
         }
     }

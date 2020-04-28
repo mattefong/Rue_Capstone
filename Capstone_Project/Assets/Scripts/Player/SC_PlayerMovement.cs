@@ -35,16 +35,16 @@ public class SC_PlayerMovement : MonoBehaviour
     private bool canWallJump;
     private bool isAttemptingToJump;
     private bool checkJumpMultiplier;
-    private bool canMove;
     private bool canFlip;
     private bool hasWallJumped;
     private bool knockback;
     private bool isDashing;
 
+    public bool canMove;
     public Vector2 knockbackSpeed;
 
     [HideInInspector]
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Animator anim;
 
     [Space]
