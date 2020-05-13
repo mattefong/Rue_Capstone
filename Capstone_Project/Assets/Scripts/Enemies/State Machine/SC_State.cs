@@ -7,7 +7,7 @@ public class SC_State
     protected SC_FiniteStateMachine stateMachine;
     protected SC_Entity entity;
 
-    protected float startTime;
+    public float startTime { get; protected set; }
 
     protected string animBoolName;
 
@@ -15,12 +15,14 @@ public class SC_State
     {
         this.entity = entity;
         this.stateMachine = stateMachine;
+        this.animBoolName = animBoolName;
     } 
 
     public virtual void Enter()
     {
         startTime = Time.time;
         entity.anim.SetBool(animBoolName, true);
+        DoChecks();
     }
     
     public virtual void Exit()
@@ -35,8 +37,12 @@ public class SC_State
     
     public virtual void PhysicsUpdate()
     {
-
+        DoChecks();
     }
 
+    public virtual void DoChecks()
+    {
+
+    }
 
 }

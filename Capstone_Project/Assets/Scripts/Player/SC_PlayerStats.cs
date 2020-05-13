@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,6 +49,11 @@ public class SC_PlayerStats : MonoBehaviour
         }
 
         StartCoroutine(BecomeTemporariltyInvincible());
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 
     public void DecreaseMana(float amount)

@@ -8,6 +8,7 @@ public class SC_MoveState : SC_State
 
     protected bool isDetectingWall;
     protected bool isDetectingLedge;
+    protected bool isPlayerInMinAgroRange;
 
     public SC_MoveState(SC_Entity entity, SC_FiniteStateMachine stateMachine, string animBoolName, D_MoveState stateData) : base(entity, stateMachine, animBoolName)
     {
@@ -21,6 +22,7 @@ public class SC_MoveState : SC_State
 
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
+        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
     }
 
     public override void Exit()
@@ -39,5 +41,6 @@ public class SC_MoveState : SC_State
 
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
+        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
     }
 }

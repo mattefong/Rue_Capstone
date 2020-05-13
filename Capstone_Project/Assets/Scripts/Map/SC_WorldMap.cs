@@ -27,6 +27,7 @@ public class SC_WorldMap : MonoBehaviour
                 CloseMap();
             }
         }
+
     }
 
     void OpenMap()
@@ -48,5 +49,4 @@ public class SC_WorldMap : MonoBehaviour
         playerCamera.SetActive(true);
         brainCamera.SetActive(true);
     }
-
 }
