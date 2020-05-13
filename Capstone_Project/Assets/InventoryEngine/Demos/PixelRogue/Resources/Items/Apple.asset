@@ -16,7 +16,7 @@ MonoBehaviour:
   TargetInventoryName: RogueMainInventory
   Usable: 1
   Equippable: 0
-  Quantity: 3
+  Quantity: 5
   ItemName: Apple
   ShortDescription: 'An apple a day keeps the doctor at bay
 
