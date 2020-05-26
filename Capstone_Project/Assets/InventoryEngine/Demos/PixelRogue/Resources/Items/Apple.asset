@@ -36,6 +36,6 @@ MonoBehaviour:
   EquippedSound: {fileID: 0}
   UsedSound: {fileID: 8300000, guid: ac5523012136b8949b2c7d1ec8cd114a, type: 3}
   MovedSound: {fileID: 0}
-  DroppedSound: {fileID: 0}
+  DroppedSound: {fileID: 8300000, guid: 71de5e3d4b3cb9a42aea16c67093f91d, type: 3}
   UseDefaultSoundsIfNull: 1
   HealthBonus: 5
