@@ -41373,6 +41373,18 @@ MonoBehaviour:
   MovedSound: {fileID: 0}
   DroppedSound: {fileID: 0}
   UseDefaultSoundsIfNull: 1
+--- !u!114 &2120041953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5694465346922127104, guid: 6109aa6892cee0f4eac123e5c366ea87,
+    type: 3}
+  m_PrefabInstance: {fileID: 5694465346811978907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2129435453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 401034, guid: 34ef20a1c78365e4d90691ae5ce029a8,
@@ -41776,7 +41788,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bombBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2120041953}
     - target: {fileID: 2336025281457641871, guid: 6109aa6892cee0f4eac123e5c366ea87,
         type: 3}
       propertyPath: projectile
@@ -41798,6 +41810,26 @@ PrefabInstance:
       propertyPath: timeBtwShots
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2336025281457641871, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: ready
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336025281457641871, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: downTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336025281457641871, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: upTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336025281457641871, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: pressTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5694465346512710755, guid: 6109aa6892cee0f4eac123e5c366ea87,
         type: 3}
       propertyPath: damageNumber
@@ -41813,6 +41845,16 @@ PrefabInstance:
         type: 3}
       propertyPath: attackDetails2.Array.data[1]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694465346512710758, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: climbCheckDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694465346512710758, guid: 6109aa6892cee0f4eac123e5c366ea87,
+        type: 3}
+      propertyPath: amountOfJumps
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5694465346512710759, guid: 6109aa6892cee0f4eac123e5c366ea87,
         type: 3}
