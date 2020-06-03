@@ -58,11 +58,11 @@ public class SC_Dummy : MonoBehaviour
         CheckKnockBack();
     }
 
-    private void Damage(float[] attackDetails)
+    private void Damage(SC_AttackDetails details)
     {
-        currentHealth -= attackDetails[0];
+        currentHealth -= details.damageAmount;
 
-        if (attackDetails[1] < aliveGO.transform.position.x)
+        if (details.position.x < aliveGO.transform.position.x)
         {
             playerFacingDirection = 1;
         }
@@ -73,7 +73,7 @@ public class SC_Dummy : MonoBehaviour
 
         Instantiate(hitParticle, aliveAnim.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
 
-        if (attackDetails[1] > aliveGO.transform.position.x)
+        if (details.position.x > aliveGO.transform.position.x)
         {
             damageDirection = -1;
         }

@@ -10,6 +10,7 @@ public class SC_ChargeState : SC_State
     protected bool isDetectingLedge;
     protected bool isDetectingWall;
     protected bool isChargeTimeOver;
+    protected bool performCloseRangeAction;
 
     public SC_ChargeState(SC_Entity entity, SC_FiniteStateMachine stateMachine, string animBoolName, D_ChargeState stateData) : base(entity, stateMachine, animBoolName)
     {
@@ -23,6 +24,8 @@ public class SC_ChargeState : SC_State
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
+
+        performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
     public override void Enter()

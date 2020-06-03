@@ -13,11 +13,13 @@ public class SC_PlayerStats : MonoBehaviour
         deathChunkParticle,
         deathBloodParticle;
 
-    private float currentHealth, currentMana;
+    public float currentHealth, currentMana;
 
     private bool isInvincible = false;
 
     private SC_GameManager GM;
+
+    private SC_HitStop hitStop;
 
     private Animator anim;
 

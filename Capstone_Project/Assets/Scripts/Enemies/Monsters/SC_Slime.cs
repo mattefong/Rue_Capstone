@@ -54,6 +54,8 @@ public class SC_Slime : MonoBehaviour
 
     private float[] attackDetails = new float[2];
 
+    private SC_AttackDetails details;
+
     private int
         facingDirection,
         damageDirection;
@@ -169,13 +171,13 @@ public class SC_Slime : MonoBehaviour
     }
 
     //--OTHER FUNCTIONS
-    private void Damage(float[] attackDetails)
+    private void Damage(SC_AttackDetails details)
     {
-        currentHealth -= attackDetails[0];
+        currentHealth -= details.damageAmount;
 
         Instantiate(hitParticle, alive.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
 
-        if (attackDetails[1] > alive.transform.position.x)
+        if (details.position.x > alive.transform.position.x)
         {
             damageDirection = -1;
         }
